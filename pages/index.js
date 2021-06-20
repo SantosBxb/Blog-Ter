@@ -1,5 +1,3 @@
-import { PostAddSharp } from "@material-ui/icons";
-import Link from "next/link";
 import Layout from "../components/layout/Layout";
 import NuevoPost from "../components/NuevoPost";
 import usePost from "../hooks/usePost";
