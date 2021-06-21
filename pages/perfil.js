@@ -4,7 +4,7 @@ import Layout from "../components/layout/Layout";
 import FileUploader from "react-firebase-file-uploader";
 import validarCrearCuenta from "../validacion/validarCrearCuenta";
 import { FirebaseContext } from "../firebase";
-import Router from "next/router";
+import Router, {useRouter} from "next/router";
 
 const STATE_INICIAL = {
   nombre: "",
@@ -12,7 +12,12 @@ const STATE_INICIAL = {
   confirmar: "",
 };
 const Perfil = () => {
+  
   const { usuario, firebase } = useContext(FirebaseContext);
+  const router = useRouter()
+  if(!usuario) router.push('/iniciar-sesion')
+
+
   const [valores, setvalores] = useState({
     nombre: usuario ? usuario.displayName : "",
     password: "",
@@ -105,7 +110,6 @@ const Perfil = () => {
       setError("");
     }
   };
-  console.log(check);
   return (
     <Layout>
       <div className="row justify-content-center g-0 mt-4 mx-2">

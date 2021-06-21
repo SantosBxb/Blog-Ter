@@ -4,8 +4,8 @@ import React from "react";
 
 const Footer = () => {
   return (
-    <footer className="card m-2 shadow ">
-        <div className="row my-2 mx-5">
+    <footer className="card my-2 shadow footer">
+        <div className="row my-2 mx-5 ">
           <div className="m-2 col-12 d-flex justify-content-center">
             <Link href="/">
               <a className="text-decoration-none  rounded-3 ">

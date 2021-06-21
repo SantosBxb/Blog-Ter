@@ -1,11 +1,14 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import Layout from "../components/layout/Layout";
 import Link from "next/link";
 import Router from "next/router";
-import firebase from "../firebase";
+import firebase, { FirebaseContext } from "../firebase";
 import validarIniciarSesion from "../validacion/validarIniciarSesion";
+import NoAuth from "../components/NoAutn";
 
 const IniciarSesion = () => {
+  const { usuario } = useContext(FirebaseContext);
+
   const [valores, setValores] = useState({
     email: "",
     password: "",
@@ -61,6 +64,7 @@ const IniciarSesion = () => {
   };
   return (
     <Layout>
+      {!usuario && <NoAuth />}
       <div className="container mt-3 vh-75">
         <div className="row mx-1 justify-content-center">
           {verificando ? (

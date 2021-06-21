@@ -1,11 +1,16 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import Post from "../components/Post";
 import usePost from "../hooks/usePost";
 import Layout from "../components/layout/Layout";
 import { useRouter } from "next/router";
+import { FirebaseContext } from "../firebase";
 
 export default function Buscar() {
-  const router = useRouter();
+
+  const { usuario } = useContext(FirebaseContext);
+  const router = useRouter()
+  if(!usuario) router.push('/iniciar-sesion')
+
   const {
     query: { q },
   } = router;

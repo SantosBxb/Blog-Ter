@@ -14,7 +14,7 @@ $utilities: (
   "viewport-width":(
     property: width,
     class: vw,
-    values: (20: 20vw, 100: 100vw)
+    values: (20: 20vw, 100: 100vw, 90: 90vw)
   ),
   "height": (
     property: height,
@@ -49,14 +49,27 @@ $custom-colors: (
   // Merge the maps
   $theme-colors: map-merge($theme-colors, $custom-colors);
   
-  
+.footer {
+  width: 100%;
+  height: 81px;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
+// .btn-width {
+//   @media (max-width:1020px){
+//     width:6.5rem
+//   }
+//   @media (max-width:1075px){
+//     width:7rem
+//   }
+// }
 .image-container {
   margin: 0 auto 1rem;
   width:95%;
   @media (min-width:992px){
     width:60%;
   }
-
 
   > div {
     position: unset !important;

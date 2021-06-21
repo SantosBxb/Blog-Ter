@@ -4,7 +4,13 @@ import { FirebaseContext } from "../firebase";
 import Post from "../components/Post";
 import NuevoPost from "../components/NuevoPost";
 import usePost from '../hooks/usePost'
+import { useRouter } from "next/router";
+
 const Populares = () => {
+  const { usuario } = useContext(FirebaseContext);
+  const router = useRouter()
+  if(!usuario) router.push('/iniciar-sesion')
+
   const { posts } = usePost("likes");
 
   return (

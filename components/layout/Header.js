@@ -40,8 +40,8 @@ const Header = () => {
   }
   return (
     <nav className="navbar navbar-expand-lg navbar-light bg-negro g-0 fijo">
-      <div className="container-fluid d-flex shadow shadow-info g-0">
-        <div className="navbar-brand flex-grow-1 text-center text-primary my-2 ms-5 fst-italic fw-bold rounded-3">
+      <div className="container-fluid d-flex justify-content-between shadow shadow-info g-0">
+        <div className="navbar-brand flex-grow-1 flex-shrink-1 text-center text-primary my-2 ms-5 fst-italic fw-bold rounded-3">
           <Link href="/">
             <a className="text-decoration-none  rounded-3 pb-1">
               <h1 className="d-inline shadow bg-se px-2 pb-1 ">BlogTer</h1>
@@ -102,20 +102,20 @@ const Header = () => {
               <Link href="/" passHref>
                 <button 
                   onClick={() => firebase.cerrarSesion()} 
-                  className="btn btn-outline-danger my-3 mx-1">Cerrar Sesión</button> 
+                  className="btn btn-outline-danger btn-sm my-3 mx-1">Cerrar Sesión</button> 
               </Link>
             </div>
           ) : (
-            <div className="navbar-nav order-2 flex-shrink-0 flex-grow-1 justify-content-center mx-lg-0 mx-3 mx-xl-3">
+            <div className="navbar-nav order-2 flex-grow-1 justify-content-center mx-lg-0 mx-3 mx-xl-3">
               <Link href="/iniciar-sesion">
-                <a className="btn btn-outline-primary my-3 mx-1 ">
+                <a className="btn btn-outline-primary btn-width my-3 mx-1 ">
                   Iniciar Sesión
                 </a>
               </Link>
 
               <Link href="/nueva-cuenta">
                 <a
-                  className="btn btn-outline-info my-3 mx-1 "
+                  className="btn btn-outline-info btn-width my-3 mx-1 "
                   onClick={showMenu}
                 >
                   Crear Cuenta
